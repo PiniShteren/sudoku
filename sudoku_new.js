@@ -4,17 +4,109 @@ var sudoku = [];
 
 debugger;
 mat = [
-	[0, 0, 0, 0, 0, 0, 0, 0, 0],
-	[0, 0, 0, 0, 0, 0, 0, 0, 0],
-	[0, 0, 0, 0, 0, 0, 0, 0, 0],
-	[0, 0, 0, 0, 0, 0, 0, 0, 0],
-	[0, 0, 0, 0, 0, 0, 0, 0, 0],
-	[0, 0, 0, 0, 0, 0, 0, 0, 0],
-	[0, 0, 0, 0, 0, 0, 0, 0, 0],
-	[0, 0, 0, 0, 0, 0, 0, 0, 0],
-	[0, 0, 0, 0, 0, 0, 0, 0, 0],
+	[
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	[
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	[
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	[
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	[
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	[
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	[
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	[
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	[
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	]
 ];
-sudoku = [0];
+sudoku = [
+	0
+];
 let counter = 0;
 let countNP = 0;
 let countF = 0;
@@ -24,7 +116,17 @@ let firstArr = [];
 let middleArr = [];
 let endOfArr = [];
 
-let randArr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+let randArr = [
+	1,
+	2,
+	3,
+	4,
+	5,
+	6,
+	7,
+	8,
+	9
+];
 let notP = [];
 for (i = 0; i < 9; i++) {
 	for (j = 0; j < 9; j++) {
@@ -32,7 +134,8 @@ for (i = 0; i < 9; i++) {
 			for (r = 0; r < 9; r++) {
 				if (!mat[i][r]) {
 					continue;
-				} else {
+				}
+				else {
 					notP[counter] = mat[i][r];
 					counter++;
 				}
@@ -40,7 +143,8 @@ for (i = 0; i < 9; i++) {
 			for (c = 0; c < mat.length; c++) {
 				if (!mat[c][j]) {
 					continue;
-				} else {
+				}
+				else {
 					notP.forEach((item) => {
 						if (mat[c][j] !== item) {
 							countNP++;
@@ -69,7 +173,8 @@ for (i = 0; i < 9; i++) {
 					j = -1;
 					continue;
 				}
-			} else {
+			}
+			else {
 				let rand = () => {
 					return Math.floor(Math.random() * randArr.length);
 				};
@@ -77,17 +182,30 @@ for (i = 0; i < 9; i++) {
 				mat[i][j] = randArr[func];
 			}
 			counter = 0;
-			randArr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+			randArr = [
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9
+			];
 			notP = [];
-		} else {
+		}
+		else {
 			for (arr = 0; arr < mat[i].length; arr++) {
 				if (arr < 3) {
 					firstArr[countF] = mat[i - 1][arr];
 					countF++;
-				} else if (arr < 6) {
+				}
+				else if (arr < 6) {
 					middleArr[countM] = mat[i - 1][arr];
 					countM++;
-				} else if (arr < 9) {
+				}
+				else if (arr < 9) {
 					endOfArr[countE] = mat[i - 1][arr];
 					countE++;
 				}
@@ -95,7 +213,11 @@ for (i = 0; i < 9; i++) {
 			countF = 0;
 			countM = 0;
 			countE = 0;
-			let row = [...middleArr, ...endOfArr, ...firstArr];
+			let row = [
+				...middleArr,
+				...endOfArr,
+				...firstArr
+			];
 			for (e = 0; e < mat[i].length; e++) {
 				mat[i][e] = row[e];
 			}
@@ -115,17 +237,16 @@ for (i = 0; i <= 8; i++) {
 
 ///\\\
 var New = 0;
-var level = document.getElementById("level");
-var tab = document.getElementById("table");
-var button = document.getElementById("but");
+var level = document.getElementById('level');
+var tab = document.getElementById('table');
+var button = document.getElementById('but');
 var choos = 0;
 ///create sudoku by solve\\\
 ///easy\\\
 let easy = function easy() {
-	createSudoku();
 	New = 1;
-	level.style.display = "none";
-	tab.style.marginLeft = "10%";
+	level.style.display = 'none';
+	tab.style.marginLeft = '10%';
 	choos += 1;
 	let ran;
 	let b = 0;
@@ -147,8 +268,8 @@ let easy = function easy() {
 ///medium\\\
 function medium() {
 	New = 2;
-	level.style.display = "none";
-	tab.style.marginLeft = "10%";
+	level.style.display = 'none';
+	tab.style.marginLeft = '10%';
 	choos++;
 	let ran;
 	let b;
@@ -169,8 +290,8 @@ function medium() {
 ///hard\\\
 function hard() {
 	New = 3;
-	level.style.display = "none";
-	tab.style.marginLeft = "10%";
+	level.style.display = 'none';
+	tab.style.marginLeft = '10%';
 	choos++;
 	let ran;
 	let b;
@@ -191,8 +312,8 @@ function hard() {
 ///evil\\\
 function evil() {
 	New = 4;
-	level.style.display = "none";
-	tab.style.marginLeft = "10%";
+	level.style.display = 'none';
+	tab.style.marginLeft = '10%';
 	choos++;
 	let ran;
 	let b;
@@ -217,17 +338,18 @@ function print() {
 	for (let i = 0; i < 9; i++) {
 		for (j = 0; j < 9; j++) {
 			if (sudoku[p] > 0) {
-				td = document.getElementById(i + "-" + j);
-				td.classList.add("num");
+				td = document.getElementById(i + '-' + j);
+				td.classList.add('num');
 				td.innerHTML = sudoku[p];
 				p++;
-			} else {
+			}
+			else {
 				p++;
 				continue;
 			}
 		}
 	}
-	console.log("l");
+	console.log('l');
 }
 
 // debugger;
@@ -236,29 +358,120 @@ function check() {
 	if (choos > 0) {
 		p = 0;
 		let check = [
-			[0, 0, 0, 0, 0, 0, 0, 0, 0],
-			[0, 0, 0, 0, 0, 0, 0, 0, 0],
-			[0, 0, 0, 0, 0, 0, 0, 0, 0],
-			[0, 0, 0, 0, 0, 0, 0, 0, 0],
-			[0, 0, 0, 0, 0, 0, 0, 0, 0],
-			[0, 0, 0, 0, 0, 0, 0, 0, 0],
-			[0, 0, 0, 0, 0, 0, 0, 0, 0],
-			[0, 0, 0, 0, 0, 0, 0, 0, 0],
-			[0, 0, 0, 0, 0, 0, 0, 0, 0],
+			[
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			],
+			[
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			],
+			[
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			],
+			[
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			],
+			[
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			],
+			[
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			],
+			[
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			],
+			[
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			],
+			[
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			]
 		];
 		for (var i = 0; i < 9; i++) {
 			for (var j = 0; j < 9; j++) {
 				if (sudoku[p] > 0) {
 					check[i][j] = sudoku[p];
 					p++;
-				} else {
-					I = "";
+				}
+				else {
+					I = '';
 					I += i;
-					J = "";
+					J = '';
 					J += j;
 					var inpu = parseInt(document.getElementById(`${I}${J}`).value);
 					if (!inpu) {
-						alert("complite the sudoku");
+						alert('complite the sudoku');
 						j = 9;
 						i = 9;
 						break;
@@ -271,7 +484,17 @@ function check() {
 		console.log(check);
 		/// checing\\\
 		///rows\\\
-		let index = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+		let index = [
+			1,
+			2,
+			3,
+			4,
+			5,
+			6,
+			7,
+			8,
+			9
+		];
 		let count = 0;
 		let trues = 0;
 		let row = [];
@@ -375,18 +598,20 @@ function check() {
 			trues++;
 		}
 		if (trues === 3) {
-			tab.innerHTML = "well done";
-			tab.classList.add("well");
-			button.style.display = "none";
-		} else if (inpu) {
-			tab.innerHTML = "game over";
-			tab.classList.add("over");
-			button.style.display = "none";
+			tab.innerHTML = 'well done';
+			tab.classList.add('well');
+			button.style.display = 'none';
 		}
-		console.log("false");
+		else if (inpu) {
+			tab.innerHTML = 'game over';
+			tab.classList.add('over');
+			button.style.display = 'none';
+		}
+		console.log('false');
 		console.log(check);
-	} else {
-		alert("choose level");
+	}
+	else {
+		alert('choose level');
 	}
 }
 
