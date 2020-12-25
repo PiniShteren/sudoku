@@ -20,7 +20,7 @@ function enter() {
 	if (use && pas) {
 		document.getElementById("enter").onclick = function () {
 			window.location.assign(
-				"file:///C:/Users/pini5/OneDrive/%D7%A9%D7%95%D7%9C%D7%97%D7%9F%20%D7%94%D7%A2%D7%91%D7%95%D7%93%D7%94/sudoku%20new/sudoku_new.html"
+				"./sudoku_new.html"
 			);
 		};
 	}
