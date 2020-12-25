@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>sudoku game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="refresh" content="100" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="sudoku_user.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div id="check_user">
+        <h>sudoku</h>
+        <div class="inputLogin">
+          <input
+            class="btn"
+            id="user_name"
+            type="text"
+            placeholder="User Name"
+          />
+          <p id="wrongU"></p>
+          <input
+            class="btn"
+            id="password"
+            type="password"
+            placeholder="Password"
+          />
+          <p id="wrongP"></p>
+          <button class="btn" id="enter" onclick="enter()">Enter</button>
+        </div>
+      </div>
+    </div>
+    <script src="sudoku_user.js"></script>
+  </body>
+</html>
