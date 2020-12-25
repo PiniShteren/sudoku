@@ -20,8 +20,15 @@ function enter() {
 		document.getElementById('wrongP').innerHTML = 'wrong password';
 	}
 	if (use && pas) {
+<<<<<<< HEAD
 		document.getElementById('enter').onclick = function() {
 			window.location.assign('./sudoku_new.html');
+=======
+		document.getElementById("enter").onclick = function () {
+			window.location.assign(
+				"./sudoku_new.html"
+			);
+>>>>>>> 3d9dd95c89aa81ff7d5df6d5c835a4c7464febc6
 		};
 	}
 }
