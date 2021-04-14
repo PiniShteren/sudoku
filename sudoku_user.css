@@ -2,16 +2,22 @@ body {
 	background-image: url("toilet-paper-3047628_1280.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
+	background-position: center;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 #check_user {
-	width: 50%;
 	height: 80%;
 	padding-left: 0%;
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 h {
-	margin: 60px 0px 0px 60px;
+	/* margin: 60px 0px 0px 60px; */
 	font-size: 400%;
 	font-family: "Comic Sans MS", "Comic Sans", cursive;
 	animation: mati 8s infinite;
@@ -39,20 +45,26 @@ h {
 		color: violet;
 	}
 }
-
+.inputLogin {
+	width: 80%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
 #user_name {
+	width: 95%;
 	margin-top: 30px;
-	font-size: 130%;
+	font-size: 1.5em;
 	font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
 #password {
-	font-size: 130%;
+	width: 95%;
+	font-size: 1.5em;
 	font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
 #enter {
 	font-size: 200%;
 	font-family: "Comic Sans MS", "Comic Sans", cursive;
-	margin: 20px 0px 0px 100px;
 	border-radius: 5px;
 	color: white;
 	animation: enter 8s infinite;

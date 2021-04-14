@@ -20,12 +20,7 @@ function enter() {
 		document.getElementById('wrongP').innerHTML = 'wrong password';
 	}
 	if (use && pas) {
-		document.getElementById('enter').onclick = function() {
-			window.location.assign('./sudoku_new.html');
-
-			document.getElementById('enter').onclick = function() {
-				window.location.assign('./sudoku_new.html');
-			};
-		};
-	}
+		window.open('./sudoku_new.html');
+	};
 }
+
