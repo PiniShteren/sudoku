@@ -9,7 +9,7 @@ body {
 }
 #background {
 	width: 100%;
-	height: 86vh;
+	height: 90vh;
 	position: absolute;
 	background-image: url("./numbers.jpg");
 	background-repeat: no-repeat;
@@ -39,7 +39,6 @@ body {
 	font-size: 2em;
 	border: 2px solid black;
 	box-shadow: -3px -3px 3px rgb(49, 49, 49), 0 0 3px;
-	font-family: "Comic Sans MS", "Comic Sans", cursive;
 	width: 85%;
 	height: 3em;
 }
@@ -189,5 +188,4 @@ td:nth-child(3n + 1) {
 	color: rgb(0, 0, 0);
 	font-size: 30px;
 	font-weight: bold;
-	font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
