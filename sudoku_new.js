@@ -1,5 +1,12 @@
 /////////////////////CREATE SUDOKU\\\\\\\\\\\\\\\\\\\\
-
+import { name } from './sudoku_user.js';
+document.getElementById('spanName').innerHTML = name();
+document.getElementById('easy').onclick = () => { easy() };
+document.getElementById('medium').onclick = () => { medium() };
+document.getElementById('hard').onclick = () => { hard() };
+document.getElementById('evil').onclick = () => { evil() };
+document.getElementById('check').onclick = () => { check() };
+document.getElementById('new').onclick = () => { newGame() };
 // empty sudoku
 var mat = [
 	[0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -29,13 +36,13 @@ let endOfArr = []; // the first row in the last box
 
 let randArr = [1, 2, 3, 4, 5, 6, 7, 8, 9]; // an array of numbers that can be placed inside the cell
 let notP = []; // an array of numbers that cannot be placed inside the cell
-for (i = 0; i < 9; i++) {
+for (let i = 0; i < 9; i++) {
 	// A loop that ran on the lines
-	for (j = 0; j < 9; j++) {
+	for (let j = 0; j < 9; j++) {
 		// A loop that ran on the columns
 		if (i === 0 || i === 3 || i === 6) {
 			// A condition that the rows are the beginning of new boxes (index 0,3,6)
-			for (r = 0; r < mat[i].length; r++) {
+			for (let r = 0; r < mat[i].length; r++) {
 				// A new loop that ran on the columns
 				if (!mat[i][r]) {
 					// A condition that if the cell (mat[i][r]) is empty (false) then continue
@@ -46,7 +53,7 @@ for (i = 0; i < 9; i++) {
 					counter++;
 				}
 			}
-			for (c = 0; c < mat.length; c++) {
+			for (let c = 0; c < mat.length; c++) {
 				// A new loop that ran on the lines
 				if (!mat[c][j]) {
 					// A condition that if the cell (mat[c][j]) is empty (false) then continue
@@ -104,7 +111,7 @@ for (i = 0; i < 9; i++) {
 			notP = []; // reset the default array to  the next iteration
 		} else {
 			// if i!= index(0,3,6)
-			for (arr = 0; arr < mat[i].length; arr++) {
+			for (let arr = 0; arr < mat[i].length; arr++) {
 				// A new loop that ran on the columns
 				if (arr < 3) {
 					// the first row in the first box
@@ -125,7 +132,7 @@ for (i = 0; i < 9; i++) {
 			countE = 0; // reset the counter to the next iteration
 			let row = [...middleArr, ...endOfArr, ...firstArr];
 			//take the diffrent arrays into one array in that order (spread)
-			for (e = 0; e < mat[i].length; e++) {
+			for (let e = 0; e < mat[i].length; e++) {
 				// A new loop that ran on the columns
 				mat[i][e] = row[e]; // take the sell value from row array to the sudoku mat[i][e]
 			}
@@ -139,8 +146,8 @@ console.log(mat);
 
 let sudoku = []; // an array that becomes a sudoku array
 ///////loops that take the values from mat matrix and place them in a sudoku array\\\\\\\
-for (i = 0; i <= 8; i++) {
-	for (j = 0; j <= 8; j++) {
+for (let i = 0; i <= 8; i++) {
+	for (let j = 0; j <= 8; j++) {
 		sudoku.push(mat[i][j]);
 	}
 }
@@ -153,17 +160,18 @@ var tab = document.getElementById("table");
 // A variable that takes the table sudoku from html
 var button = document.getElementById("checkB");
 // A variable that takes the buttons 'check' from html
-var choose = 0;
+var choose = false;
 
 /*Functions that prints the mat matrix to html and deletes values in random cells 
   according to tifficulty level*/
 
 function easy() {
+	document.getElementById('level').style.display = 'none';
+	document.getElementById('container').style.position = 'unset';
+	document.getElementById('container').style.visibility = 'visible';
 	startTimer(); //start timer
 	//level of difficulty - easy
-	level.style.display = "none"; //As soon as the button is pressed, the button disappears
-	tab.style.marginLeft = "8px"; //css throhge js
-	choose++; //Know that a level has been selected
+	choose = true; //Know that a level has been selected
 	let ran; // A variable that contains a function
 	let b; // A variable that receives a function
 	let counter = 0;
@@ -183,11 +191,14 @@ function easy() {
 }
 
 function medium() {
+	document.getElementById('level').style.display = 'none';
+	document.getElementById('container').style.position = 'unset';
+	document.getElementById('container').style.visibility = 'visible';
 	startTimer(); //start timer
 	//level of difficulty - medium
 	level.style.display = "none"; //As soon as the button is pressed, the button disappears
 	tab.style.marginLeft = "8px"; //css throhge js
-	choose++; //Know that a level has been selected
+	choose = true; //Know that a level has been selected
 	let ran; // A variable that contains a function
 	let b; // A variable that receives a function
 	let counter1 = 0;
@@ -207,11 +218,14 @@ function medium() {
 }
 
 function hard() {
+	document.getElementById('level').style.display = 'none';
+	document.getElementById('container').style.position = 'unset';
+	document.getElementById('container').style.visibility = 'visible';
 	startTimer(); //start timer
 	//level of difficulty - hard
 	level.style.display = "none"; //As soon as the button is pressed, the button disappears
 	tab.style.marginLeft = "8px"; //css throhge js
-	choose++; //Know that a level has been selected
+	choose = true; //Know that a level has been selected
 	let ran; // A variable that contains a function
 	let b; // A variable that receives a function
 	let counter = 0;
@@ -231,11 +245,14 @@ function hard() {
 }
 
 function evil() {
+	document.getElementById('level').style.display = 'none';
+	document.getElementById('container').style.position = 'unset';
+	document.getElementById('container').style.visibility = 'visible';
 	startTimer(); //start timer
 	//level of difficulty - evil
 	level.style.display = "none"; //As soon as the button is pressed, the button disappears
 	tab.style.marginLeft = "8px"; //css throhge js
-	choose++;
+	choose = true;
 	let ran; // A variable that contains a function
 	let b; // A variable that receives a function
 	let counter = 0;
@@ -255,18 +272,20 @@ function evil() {
 }
 
 function print() {
+	debugger
 	//A function that prints values for html from a sudoku array
 	var td; //A variable that takes values from html
-	let p = 0; //Counter for the index position of the sudoku array
+	let p = 0;
 	for (let i = 0; i < 9; i++) {
 		//A loop that takes the index of the rows sudoku from html
-		for (j = 0; j < 9; j++) {
+		for (let j = 0; j < 9; j++) {
 			//A loop that takes the index of the columns sudoku from html
 			if (sudoku[p] > 0) {
 				//If sudoku[p] is greater than 0
-				td = document.getElementById(i + "-" + j); //take the td[i][j] from html sudoku
+
+				td = document.getElementById(`${i}${j}`); //take the td[i][j] from html sudoku
 				td.classList.add("num"); //add className to the For cells that contain a number
-				td.innerHTML = sudoku[p]; //print sudoku[p] to td[i][j] in html
+				td.placeholder = sudoku[p]; //print sudoku[p] to td[i][j] in html
 				p++;
 			} else {
 				p++;
@@ -280,9 +299,8 @@ function print() {
 
 function check() {
 	//A function that checks the legality of sudoku by pressing a check button
-	if (choose > 0) {
-		//If there was a level selection
-		p = 0;
+	if (choose) {
+		debugger
 		var check = [
 			//Empty matrix
 			[0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -298,25 +316,16 @@ function check() {
 		//Loops that run on the indexes of check matrix
 		for (var i = 0; i < 9; i++) {
 			for (var j = 0; j < 9; j++) {
-				if (sudoku[p]) {
+				if (sudoku[i][j]) {
 					//if sudoku[p] is true
 					check[i][j] = sudoku[p]; //Enter the value of sudoku[p] into check[i][j]
-					p++;
 				} else {
-					//if sudoku[p] is false
-					I = "";
-					I += i;
-					J = "";
-					J += j;
-					var inpu = parseInt(document.getElementById(`${I}${J}`).value);
+					var inpu = parseInt(document.getElementById(`${i}${j}`).value);
 					if (!inpu) {
 						alert("complite the sudoku");
-						j = 9;
-						i = 9;
-						break;
+						return;
 					}
 					check[i][j] = inpu;
-					p++;
 				}
 			}
 		}
@@ -460,7 +469,7 @@ function check() {
 			tab.classList.add("over");
 			button.style.display = "none"; //hide the button 'check'
 			clock.style.display = "none"; //hide the timer
-			newB.style.fontSize = "35px";
+			// newB.style.fontSize = "35px";
 		}
 	} else {
 		alert("choose level");
