@@ -7,6 +7,7 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 #check_user {
 	height: 80%;
@@ -55,16 +56,13 @@ h {
 	width: 95%;
 	margin-top: 30px;
 	font-size: 1.5em;
-	font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
 #password {
 	width: 95%;
 	font-size: 1.5em;
-	font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
 #enter {
 	font-size: 200%;
-	font-family: "Comic Sans MS", "Comic Sans", cursive;
 	border-radius: 5px;
 	color: white;
 	animation: enter 8s infinite;
@@ -96,7 +94,6 @@ p {
 	/* padding-left: 22%; */
 	color: red;
 	font-weight: bold;
-	font-family: "Comic Sans MS", "Comic Sans", cursive;
 	font-size: 80%;
 }
 input[type="text"],
